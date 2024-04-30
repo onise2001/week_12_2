@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <a href="/notes/add_note"><button>Add Notes</button></a>
+    <h1>My Notes</h1>
+    <ol>
+    {% for note in notes%}
+    <li>
+        <a href="/notes/note/{{ note.id }}"><h3>Title: {{ note.title }}</h3></a>
+        <h3>Content: {{ note.content }}</h3>
+        <h3>Date: {{ note.date }}</h3>
+        <a href="/notes/delete_note/{{note.id}}"><button>Delete</button></a>
+        <br>
+    </li>
+
+
+    {% endfor %}
+    </ol>
+    
+</body>
+</html>
